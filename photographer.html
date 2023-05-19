@@ -2,36 +2,75 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <link href="css/medias.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/01b7f13aba.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="./index.html" class="logo"><img src="assets/images/logo.png"/></a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
+      <div class="photographer-medias">
+        <div class="medias-filter">
+          <label class="medias-filter-label">Trier par</label>
+          <select class="medias-filter-select" id="medias-sort" aria-label="Trier par">
+            <option value="fame" aria-label="Popularité">Popularité</option>
+            <option value="date" aria-label="Date">Date</option>
+            <option value="title" aria-label="Titre">Titre</option>
+          </select>
+        </div>
+        <div class="medias-container">
+            
+        </div>
+      </div>
+      <div class="photographer-nbs"></div>
     </main>
+    <div class="lightbox" id="lightbox-modal">
+      <div class="lightbox-content" id="lightbox-modal-content">
+        <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+        <button type="button" class="lightbox-arrow" onclick="moveLeft()" aria-label="Précédent"><i class="fa-solid fa-angle-left"></i></button>
+        <div class="lightbox-media"> </div>
+        <button type="button" class="lightbox-arrow" onclick="moveRight()" aria-label="Suivant"><i class="fa-solid fa-angle-right"></i></button>
+      </div>
+    </div>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <div class="modal-title">
+            <h2>Contactez-moi</h2>
+            <h2 id="modal-title"></h2>
+          </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form onsubmit="submitForm(event)">
 					<div>
-						<label>Prénom</label>
-						<input />
+            <label for="firstname">Prénom</label>
+						<input class="contact-input" type="text" id="firstname"/>
+            
+						<label for="name">Nom</label>
+						<input class="contact-input" type="text" id="name"/>
+
+            <label for="email">Email</label>
+						<input class="contact-input" type="text" id="email"/>
+
+            <label for="message">Votre message :</label>
+						<textarea class="contact-input" id="message"></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
+    <script src="/scripts/factories/photographer.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/utils/lightbox.js"></script>
   </body>
 </html>

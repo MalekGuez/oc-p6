@@ -1,11 +1,25 @@
 #contact_modal {
     display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(196, 196, 196, 0.4);
 }
 
 .photograph-header {
     background-color: #FAFAFA;
-    height: 300px;
+    height: 213px;
     margin: 0 100px;
+    
+    padding: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .contact_button {
@@ -31,21 +45,29 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    filter: drop-shadow(-5px 10px 30px rgba(0, 0, 0, 0.25));
 }
 
 .modal header {
     justify-content: space-between;
     width: 100%;
+    height: fit-content;
 }
 
 .modal header img {
     cursor: pointer;
+    align-self: flex-start;
 }
 
 .modal header h2 {
     font-size: 64px;
     font-weight: normal;
-    text-align: center;
+}
+
+.modal-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
 }
 
 form {
@@ -68,9 +90,72 @@ form div {
     margin-bottom: 26px;
 }
 
-form input {
+form input, form textarea {
     width: 100%;
     height: 68px;
     border: none;
     border-radius: 5px;
+    outline: none;
+    padding: 0 15px;
+}
+
+form textarea {
+    padding-top: 15px;
+}
+/* PHOTOGRAPHER'S PAGE CLASS */
+.photographer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.photographer-info .photographer-city {
+    color: #901C1C;
+    font-size: 24px;
+    line-height: 31px;
+}
+.photographer-city {
+    margin-bottom: 19px;
+}
+
+.photographer-info .photographer-tagline {
+    font-size: 18px;
+    line-height: 23px;
+    color: #525252;
+}
+
+.photographer-info .photographer-name {
+    color: #D3573C;
+    font-size: 64px;
+    line-height: 83px;
+}
+
+.photograph-header .photographer-img img{
+    scale: 0.07;
+}
+
+.photographer-nbs {
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+
+    background: #DB8876;
+
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+    width: 376px;
+    height: 20px;
+    
+    padding: 20px 30px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: #000000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
