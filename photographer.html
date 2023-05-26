@@ -35,10 +35,10 @@
     </main>
     <div class="lightbox" id="lightbox-modal">
       <div class="lightbox-content" id="lightbox-modal-content">
-        <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+        <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
         <button type="button" class="lightbox-arrow" onclick="moveLeft()" aria-label="Précédent"><i class="fa-solid fa-angle-left"></i></button>
         <div class="lightbox-media"> </div>
-        <button type="button" class="lightbox-arrow" onclick="moveRight()" aria-label="Suivant"><i class="fa-solid fa-angle-right"></i></button>
+        <button type="button" class="lightbox-arrow" id="right-arrow" onclick="moveRight()" aria-label="Suivant"><i class="fa-solid fa-angle-right"></i></button>
       </div>
     </div>
     <div id="contact_modal">
@@ -48,23 +48,23 @@
             <h2>Contactez-moi</h2>
             <h2 id="modal-title"></h2>
           </div>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <button type="button" onclick="closeModal()" id="contact-close" class="contact-close-btn"  aria-label="Fermer"><img src="assets/icons/close.svg"/></button>
         </header>
 				<form onsubmit="submitForm(event)">
 					<div>
             <label for="firstname">Prénom</label>
-						<input class="contact-input" type="text" id="firstname"/>
+						<input class="contact-input" type="text" id="firstname" aria-label="Prénom"/>
             
 						<label for="name">Nom</label>
-						<input class="contact-input" type="text" id="name"/>
+						<input class="contact-input" type="text" id="name" aria-label="Nom"/>
 
             <label for="email">Email</label>
-						<input class="contact-input" type="text" id="email"/>
+						<input class="contact-input" type="text" id="email" aria-label="Email"/>
 
             <label for="message">Votre message :</label>
-						<textarea class="contact-input" id="message"></textarea>
+						<textarea class="contact-input" id="message" aria-label="Message"></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" aria-label="Envoyer">Envoyer</button>
 				</form>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 function displayLightboxOnEnter(event) {
     if (event.key === "Enter") {
+        event.target.blur();
         displayLightbox(event, true);
     }
 }
@@ -7,7 +8,7 @@ function displayLightboxOnEnter(event) {
 function displayLightbox(event, enter = false) {
     // display lightmodal
     const lightbox = document.getElementById("lightbox-modal");
-    const lightboxContent = document.getElementById("lightbox-modal-content");        
+    const lightboxContent = document.getElementById("lightbox-modal-content");
 
 	lightbox.style.visibility = "visible";
 	lightbox.style.opacity = "1";
@@ -17,7 +18,6 @@ function displayLightbox(event, enter = false) {
         lightboxContent.style.opacity = "1";
         lightboxContent.style.translate = "0 0";
     }, 350);
-
     // get clicked media
     let media;
     if(enter) {
@@ -37,23 +37,21 @@ function displayLightbox(event, enter = false) {
     clonedMedia.children[0].style.cursor = "default";
 
     const lightboxMedia = document.querySelector('.lightbox-media');
-
     lightboxMedia.appendChild(clonedMedia);
 
-     // navigation
-     const firstElem = lightbox.querySelector(".lightbox-close");
-    //  const firstElem = elems[0];
-    //  const lastElem = elems[elems.length - 1];
+    // tab navigation
+    let close = document.getElementById('close-modal');
+    setTimeout(() => {
+        close.focus();
+    }, 500);
+    let rightArrow = document.getElementById('right-arrow');
+    rightArrow.addEventListener("keydown", (e) => {
+        if (e.key === "Tab") {
+            e.preventDefault();
+            close.focus();
+        }
+    });
 
-    console.log(firstElem);
-
-    firstElem.focus(); 
-    // lastElem.addEventListener("keydown", (e) => {
-    //     if (e.key === "Tab") {
-    //         e.preventDefault();
-    //         firstElem.focus();
-    //     }
-    // });
 }
 
 function closeLightbox() {

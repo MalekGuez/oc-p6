@@ -77,7 +77,7 @@ function mediaFactory(data, name, index) {
     function getUserCardDOM() {
         const article = document.createElement('article');
         article.className = "media";
-        article.tabIndex = "0";
+        // article.tabIndex = "0";
         article.id = `media-${index}`;
         if(typeof image !== 'undefined') {
             const media = `assets/medias/${name}/${image}`;            

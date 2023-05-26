@@ -4,6 +4,9 @@ function displayModal() {
     const modalTitle = document.getElementById("modal-title");
     modalTitle.innerHTML = document.querySelector('.photographer-name').innerHTML;
 	modal.style.display = "flex";
+
+    const closeContact = document.getElementById("contact-close");
+    closeContact.focus();
 }
 
 function closeModal() {

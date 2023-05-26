@@ -22,6 +22,16 @@
     align-items: center;
 }
 
+.contact-close-btn {
+    background: transparent;
+    outline: none;
+    border: none;
+    align-self: flex-start;
+}
+.contact-close-btn:focus {
+    outline: 1px solid royalblue;
+}
+
 .contact_button {
     font-size: 20px;
     font-weight: bold;
