@@ -149,3 +149,11 @@ function moveRight() {
         lightboxMedia.appendChild(clonedMedia);
     }
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+        moveLeft();
+    } else if (event.key === 'ArrowRight') {
+        moveRight();
+    }
+});
