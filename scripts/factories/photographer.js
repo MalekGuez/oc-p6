@@ -1,3 +1,4 @@
+// Affichage des photographes sur la page d'accueil
 function photographerFactory(data) {
     const { id, name, portrait, city, country, tagline, price } = data;
 
@@ -30,6 +31,7 @@ function photographerFactory(data) {
     return { name, picture, getUserCardDOM }
 }
 
+// Affichage des infos du photographe
 function photographerInfoFactory(data, elem) {
     const { name, city, portrait, country, tagline } = data;
 
@@ -90,7 +92,7 @@ function mediaFactory(data, name, index) {
             const media = `assets/medias/${name}/${video}`;
             article.innerHTML = `
                 <div class="media-img" onclick="displayLightbox(event)" tabindex="0" onkeydown="displayLightboxOnEnter(event)" aria-label="Voir la vidéo">
-                    <video>
+                    <video autoplay>
                         <source src="${media}" alt="${title}">
                     </video>
                 </div>

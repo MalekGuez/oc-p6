@@ -34,10 +34,13 @@ async function getMediasFromPhotographer(id, sort = 'fame') {
     .then((json) => {
         switch(sort) {
             case 'fame':
+                // tri par ordre décroissant
                 return json.media.filter(m => m.photographerId == id).sort((a, b) => b.likes - a.likes);
             case 'date':
+                // tri par date la + récente
                 return json.media.filter(m => m.photographerId == id).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
             case 'title':
+                // tri par ordre alphabétique
                 return json.media.filter(m => m.photographerId == id).sort((a, b) => a.title.localeCompare(b.title));
         }
         

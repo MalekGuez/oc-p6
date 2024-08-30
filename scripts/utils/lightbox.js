@@ -13,6 +13,7 @@ function displayLightbox(event, enter = false) {
 	lightbox.style.visibility = "visible";
 	lightbox.style.opacity = "1";
 
+    // Animation lightbox
     setTimeout(() => {
         lightboxContent.style.visibility = "visible";
         lightboxContent.style.opacity = "1";
@@ -26,7 +27,7 @@ function displayLightbox(event, enter = false) {
         media = event.target.parentNode.parentNode;
     }
     const clonedMedia = media.cloneNode(true);
-    
+    console.log(clonedMedia);
     // remove tab in lightbox
     clonedMedia.tabIndex = "-1";
     clonedMedia.children[0].tabIndex = "-1";
@@ -44,6 +45,8 @@ function displayLightbox(event, enter = false) {
     setTimeout(() => {
         close.focus();
     }, 500);
+
+    // Lorsqu'on tab sur la flèche de droite revient sur la croix
     let rightArrow = document.getElementById('right-arrow');
     rightArrow.addEventListener("keydown", (e) => {
         if (e.key === "Tab") {
