@@ -1,76 +1,149 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <!-- <link href="css/photographer.css" rel="stylesheet" type="text/css" /> -->
-    <link href="css/medias.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous"/>
-    <script src="https://kit.fontawesome.com/01b7f13aba.js" crossorigin="anonymous"></script>
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <a href="./index.html" class="logo"><img src="assets/images/logo.png"/></a>
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-      </div>
-      <div class="photographer-medias">
-        <div class="medias-filter">
-          <label class="medias-filter-label">Trier par</label>
-          <select class="medias-filter-select" id="medias-sort" aria-label="Trier par">
-            <option value="fame" aria-label="Popularité">Popularité</option>
-            <option value="date" aria-label="Date">Date</option>
-            <option value="title" aria-label="Titre">Titre</option>
-          </select>
-        </div>
-        <div class="medias-container">
-            
-        </div>
-      </div>
-      <div class="photographer-nbs"></div>
-    </main>
-    <div class="lightbox" id="lightbox-modal">
-      <div class="lightbox-content" id="lightbox-modal-content">
-        <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
-        <button type="button" class="lightbox-arrow" onclick="moveLeft()" aria-label="Précédent"><i class="fa-solid fa-angle-left"></i></button>
-        <div class="lightbox-media"> </div>
-        <button type="button" class="lightbox-arrow" id="right-arrow" onclick="moveRight()" aria-label="Suivant"><i class="fa-solid fa-angle-right"></i></button>
-      </div>
-    </div>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <div class="modal-title">
-            <h2>Contactez-moi</h2>
-            <h2 id="modal-title"></h2>
-          </div>
-          <button type="button" onclick="closeModal()" id="contact-close" class="contact-close-btn"  aria-label="Fermer"><img src="assets/icons/close.svg"/></button>
+<html lang="fr">
+    <head>
+        <link 
+            href="css/style.css" 
+            rel="stylesheet" 
+            type="text/css" 
+        >
+        <!-- <link href="css/photographer.css" rel="stylesheet" type="text/css" /> -->
+        <link 
+            href="css/medias.css" 
+            rel="stylesheet" 
+            type="text/css" 
+        >
+        <meta charset="utf-8">
+        <link 
+            rel="icon" 
+            type="image/png"
+            href="assets/favicon.png"
+        >
+        <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+        <link 
+            rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" 
+            integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" 
+            crossorigin="anonymous"
+        >
+        <script src="https://kit.fontawesome.com/01b7f13aba.js" crossorigin="anonymous"></script>
+        <title>Fisheye - photographe </title>
+    </head>
+    <body>
+        <header>
+            <a href="./index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+            </a>
         </header>
-				<form onsubmit="submitForm(event)">
-					<div>
-            <label for="firstname">Prénom</label>
-						<input class="contact-input" type="text" id="firstname" aria-label="Prénom"/>
-            
-						<label for="name">Nom</label>
-						<input class="contact-input" type="text" id="name" aria-label="Nom"/>
+        <main id="main">
+            <div class="photograph-header">
+            </div>
+            <div class="photographer-medias">
+                <div class="medias-filter">
+                    <label for="medias-sort" class="medias-filter-label">Trier par</label>
+                    <select 
+                        class="medias-filter-select" 
+                        id="medias-sort" 
+                        aria-label="Trier par"
+                    >
+                        <option value="fame" aria-label="Popularité">Popularité</option>
+                        <option value="date" aria-label="Date">Date</option>
+                        <option value="title" aria-label="Titre">Titre</option>
+                    </select>
+                </div>
+                <div class="medias-container">
+                  
+                </div>
+            </div>
+            <div class="photographer-nbs"></div>
+        </main>
+        <div class="lightbox" id="lightbox-modal">
+            <div class="lightbox-content" id="lightbox-modal-content">
+                <button 
+                    type="button" 
+                    class="lightbox-close" 
+                    onclick="closeLightbox()" 
+                    aria-label="Fermer" 
+                    id="close-modal"
+                >
+                    <span class="fa-solid fa-xmark"></span>
+                </button>
+                <button 
+                    type="button" 
+                    class="lightbox-arrow" 
+                    onclick="moveLeft()" 
+                    aria-label="Précédent"
+                >
+                    <span class="fa-solid fa-angle-left"></span>
+                </button>
+                <div class="lightbox-media"> </div>
+                <button 
+                    type="button" 
+                    class="lightbox-arrow" 
+                    id="right-arrow" 
+                    onclick="moveRight()" 
+                    aria-label="Suivant"
+                >
+                    <span class="fa-solid fa-angle-right"></span>
+                </button>
+            </div>
+        </div>
+        <div id="contact_modal">
+            <div class="modal">
+                <header>
+                    <div class="modal-title">
+                        <h2>Contactez-moi</h2>
+                        <h2 id="modal-title"></h2>
+                    </div>
+                    <button 
+                        type="button" 
+                        onclick="closeModal()" 
+                        id="contact-close" 
+                        class="contact-close-btn" 
+                        aria-label="Fermer"
+                    >
+                        <img src="assets/icons/close.svg" alt="Close">
+                    </button>
+                </header>
+                <form onsubmit="submitForm(event)">
+                    <div>
+                        <label for="firstname">Prénom</label>
+                        <input
+                            class="contact-input"
+                            type="text"
+                            id="firstname"
+                            aria-label="Prénom"
+                        >
+                
+                        <label for="name">Nom</label>
+                        <input
+                            class="contact-input"
+                            type="text"
+                            id="name"
+                            aria-label="Nom"
+                        >
 
-            <label for="email">Email</label>
-						<input class="contact-input" type="text" id="email" aria-label="Email"/>
+                        <label for="email">Email</label>
+                        <input
+                            class="contact-input"
+                            type="text"
+                            id="email"
+                            aria-label="Email"
+                        >
 
-            <label for="message">Votre message :</label>
-						<textarea class="contact-input" id="message" aria-label="Message"></textarea>
-					</div>
-          <button class="contact_button" aria-label="Envoyer">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/factories/photographer.js"></script>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-    <script src="/scripts/utils/lightbox.js"></script>
-  </body>
+                        <label for="message">Votre message :</label>
+                        <textarea
+                            class="contact-input"
+                            id="message"
+                            aria-label="Message"
+                        ></textarea>
+                    </div>
+                    <button class="contact_button" aria-label="Envoyer">Envoyer</button>
+                </form>
+            </div>
+        </div>
+        <script src="/scripts/factories/photographer.js"></script>
+        <script src="/scripts/pages/photographer.js"></script>
+        <script src="/scripts/utils/contactForm.js"></script>
+        <script src="/scripts/utils/lightbox.js"></script>
+    </body>
 </html>
